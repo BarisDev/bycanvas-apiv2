@@ -5,7 +5,9 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
     cors: {
-        origin: ["https://bycanvas.web.app/", "https://bycanvas.web.app/", "http://localhost:4200"]
+        origin: "https://bycanvas.web.app/",
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
     }
 });
 
