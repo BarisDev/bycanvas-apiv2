@@ -9,10 +9,6 @@ const io = require("socket.io")(server, {
     }
 });
 
-server.get('/', (req, res) => {
-    res.send('Welcome');
-});
-
 io.on('connection', (socket) => {
     //console.log('a user connected');
     socket.on('message', (msg) => {
@@ -23,6 +19,6 @@ io.on('connection', (socket) => {
     
 });
 
-server.get("/", (req, res) => res.send('Welcome'));
+app.get("/", (req, res) => res.send('Welcome'));
 
 server.listen(port, () => console.log(`Example app listening on port ${port}!`));
