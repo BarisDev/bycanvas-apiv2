@@ -13,8 +13,8 @@ io.on('connection', (socket) => {
     //console.log('a user connected');
     socket.on('message', (msg) => {
         //console.log('message: ' + msg);
-        socket.emit("message", msg);
-        //io.emit('message', 'server says: click accepted..');
+        //socket.emit("message", msg); //kullanıcıya at
+        io.emit("message", msg); //herkese at
     });
     
 });
